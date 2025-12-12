@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <style>
+    /* OVERRIDE ZA BRAON TEMU - QR8 */
+    .header {
+        background: linear-gradient(135deg, #795548 0%, #5D4037 100%) !important;
+    }
+    
+    .section-title {
+        color: #5D4037 !important;
+        border-bottom: 3px solid #795548 !important;
+    }
+    
+    .section-title i {
+        color: #795548 !important;
+    }
+    
+    .student-item {
+        border-left: 4px solid #795548 !important;
+        background: #efebe9 !important;
+    }
+    
+    .student-item:hover {
+        background: #d7ccc8 !important;
+    }
+    
+    .description-text {
+        border-left: 5px solid #795548 !important;
+        background: #fafafa !important;
+    }
+    
+    .mentor-info {
+        border-left: 4px solid #795548 !important;
+        background: #efebe9 !important;
+    }
+    
+    .back-button {
+        background: linear-gradient(135deg, #795548 0%, #5D4037 100%) !important;
+    }
+    
+    .back-button:hover {
+        background: linear-gradient(135deg, #5D4037 0%, #3e2a24 100%) !important;
+    }
+    
+    .footer {
+        border-top: 3px solid #795548 !important;
+    }
+    
+    .carousel-btn {
+        background: rgba(121, 85, 72, 0.85) !important;
+    }
+    
+    .carousel-btn:hover {
+        background: rgba(93, 64, 55, 1) !important;
+    }
+    
+    .carousel-indicator.active {
+        background: #795548 !important;
+    }
+    
+    .header h1 {
+        font-size: 2.4rem !important;
+        margin-bottom: 5px !important;
+    }
+    
+    .header .subtitle {
+        font-size: 1.2rem !important;
+        font-weight: 500 !important;
+    }
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zimska radionica</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Zimska radionica</h1>
+        <div class="subtitle">Roditelji i gosti</div>
+    </div>
+    
+    <div class="content-section">
+        <div class="section-title"><i class="fas fa-users"></i> Učenici PO Zaljevo:</div>
+        <div class="students-container">
+            <!-- Kolona 1 -->
+            <div class="student-item">Babačić Elma</div>
+            <div class="student-item">Bešlić Dijana</div>
+            <div class="student-item">Boljević Sara</div>
+            <div class="student-item">Krajina Azra</div>
+            <div class="student-item">Pavlović Filip</div>
+            <div class="student-item">Rastoder Envera</div>
+            <div class="student-item">Šabotić Emil</div>
+            <div class="student-item">Škrijelj Ajna</div>
+            <div class="student-item">Škrijelj Alaris</div>
+            <div class="student-item">Drljan Kan</div>
+            <div class="student-item">Kurtović Berin</div>
+            <div class="student-item">Zoronjić Kerim</div>
+            <div class="student-item">Prentić Hanan</div>
+            <div class="student-item">Radović Petar</div>
+            
+            <!-- Kolona 2 -->
+            <div class="student-item">Aljošević Amina</div>
+            <div class="student-item">Aljošević Orhan</div>
+            <div class="student-item">Babačić Emir</div>
+            <div class="student-item">Hadžibulić Asja</div>
+            <div class="student-item">Muhović Haris</div>
+            <div class="student-item">Drljan Omer</div>
+            <div class="student-item">Nurković Edisa</div>
+            <div class="student-item">Pavlović Paola</div>
+            <div class="student-item">Mehmedović Lara</div>
+            <div class="student-item">Puzo Elvin</div>
+            <div class="student-item">Murić Anis</div>
+            <div class="student-item">Suljić Asija</div>
+            <div class="student-item">Škrijelj Daria</div>
+            
+            <!-- Kolona 3 -->
+            <div class="student-item">Alibašić Dina</div>
+            <div class="student-item">Bracić Lejla</div>
+            <div class="student-item">Škrijelj Darian</div>
+        </div>
+    </div>
+    
+    <div class="content-section">
+        <div class="section-title"><i class="fas fa-info-circle"></i> Opis:</div>
+        <div class="description-text">
+            Učenici PO Zaljevo će sa svojim učiteljicama ugostiti roditelje i druge posjetioce. U lijepoj atmosferi tople školice biće organizovane radionice za izradu ukrasa sa novogodišnjom tematikom kao i drugi zabavni, edukativni sadržaji. Dođite i uživajte u kreativnom radu sa najmlađima!
+        </div>
+        
+        <div style="background: #fff3e0; padding: 20px; border-radius: 10px; margin-top: 20px; border-left: 4px solid #ff9800;">
+            <p style="margin: 0; font-weight: 600; color: #e65100;">
+                <i class="fas fa-gift"></i> PLANIRANE AKTIVNOSTI:
+            </p>
+            <ul style="margin: 10px 0 0 20px; color: #e65100;">
+                <li>Izrada novogodišnjih ukrasa</li>
+                <li>Zimske kreativne radionice</li>
+                <li>Edukativne igre i zabava</li>
+                <li>Slatkiši i gostoprimstvo</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="content-section">
+        <div class="section-title"><i class="fas fa-images"></i> Galerija</div>
+        
+        <div class="carousel-container" id="carouselContainer">
+            <div class="carousel-slides">
+                <!-- Slajdovi će se kreirati automatski putem JavaScript-a -->
+            </div>
+            
+            <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
+            
+            <div class="carousel-indicators">
+                <!-- Indikatori će se kreirati automatski -->
+            </div>
+        </div>
+        
+        <div class="image-info" id="imageInfo">Slika 1/3</div>
+    </div>
+    
+    <div style="text-align: center; padding: 25px; background: white; border-left: 5px solid #3a6ea5;">
+        <a href="index.html" class="back-button">
+            <i class="fas fa-arrow-left"></i> Povratak na početak
+        </a>
+    </div>
+    
+    <div class="footer">
+        <p>© 2025 Osnovna Škola "Srbija" - Stari Bar </p>
+        <p style="margin-top: 5px; font-size: 0.85rem;"></p>
+    </div>
+
+    <script src="js/carousel.js"></script>
+    <script>
+        // Postavi slike za ovaj QR
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sačekaj da se karusel inicijalizuje
+            setTimeout(() => {
+                // Postavi istu sliku za sva 3 slajda
+                for (let i = 1; i <= 3; i++) {
+                    const slideBg = document.getElementById(`slide${i}`);
+                    if (slideBg) {
+                        slideBg.style.backgroundImage = "url('images/Slika_QR8.jpg')";
+                    }
+                }
+            }, 100);
+        });
+    </script>
+</body>
+</html>

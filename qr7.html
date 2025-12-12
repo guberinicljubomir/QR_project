@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <style>
+    /* OVERRIDE ZA ŽUTU TEMU - QR7 */
+    .header {
+        background: linear-gradient(135deg, #FFC107 0%, #FF8F00 100%) !important;
+    }
+    
+    .section-title {
+        color: #FF8F00 !important;
+        border-bottom: 3px solid #FFC107 !important;
+    }
+    
+    .section-title i {
+        color: #FFC107 !important;
+    }
+    
+    .student-item {
+        border-left: 4px solid #FFC107 !important;
+        background: #fff8e1 !important;
+    }
+    
+    .student-item:hover {
+        background: #ffecb3 !important;
+    }
+    
+    .description-text {
+        border-left: 5px solid #FFC107 !important;
+        background: #fffef5 !important;
+    }
+    
+    .mentor-info {
+        border-left: 4px solid #FFC107 !important;
+        background: #fff8e1 !important;
+    }
+    
+    .back-button {
+        background: linear-gradient(135deg, #FFC107 0%, #FF8F00 100%) !important;
+    }
+    
+    .back-button:hover {
+        background: linear-gradient(135deg, #FF8F00 0%, #cc7200 100%) !important;
+    }
+    
+    .footer {
+        border-top: 3px solid #FFC107 !important;
+    }
+    
+    .carousel-btn {
+        background: rgba(255, 193, 7, 0.85) !important;
+    }
+    
+    .carousel-btn:hover {
+        background: rgba(255, 143, 0, 1) !important;
+    }
+    
+    .carousel-indicator.active {
+        background: #FFC107 !important;
+    }
+    
+    .header h1 {
+        font-size: 2.4rem !important;
+        margin-bottom: 5px !important;
+    }
+    
+    .header .subtitle {
+        font-size: 1.2rem !important;
+        font-weight: 500 !important;
+    }
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Likovni kutak</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Likovni kutak</h1>
+        <div class="subtitle">Crteži i slike</div>
+    </div>
+    
+    <div class="content-section">
+        <div class="section-title"><i class="fas fa-users"></i> Mladi umjetnici:</div>
+        <div class="students-container">
+            <div class="student-item">Zejak Nikolina</div>
+            <div class="student-item">Cocalić Hana</div>
+            <div class="student-item">Pukić Andrija</div>
+            <div class="student-item">Jovančov Stefan</div>
+            <div class="student-item">Georgijev Stefan</div>
+            <div class="student-item">Kukalj Benisa</div>
+            <div class="student-item">Begzić Andjela</div>
+            <div class="student-item">Zaganjor Tarik</div>
+            <div class="student-item">Zaganjor Hana</div>
+        </div>
+    </div>
+    
+    <div class="content-section">
+        <div class="section-title"><i class="fas fa-info-circle"></i> Opis:</div>
+        <div class="description-text">
+            Sa zadovoljstvom Vas pozivamo u naš likovni kutak, gdje ćete se susresti sa našim mladim, talentovanim i vrijednim stvaraocima, kao i radovima učenika nastalih u toku školske godine, a kroz koje se može sagledati stvaralaštvo naših mladih umjetnika.
+        </div>
+        
+        <div class="mentor-info">
+            <i class="fas fa-chalkboard-teacher"></i> Mentor: nastavnik Miloš Kontić
+        </div>
+        
+        <div style="background: #e8f5e9; padding: 20px; border-radius: 10px; margin-top: 20px; border-left: 4px solid #4caf50;">
+            <p style="margin: 0; font-weight: 600; color: #2c6b2f;">
+                <i class="fas fa-exclamation-circle"></i> VAŽNA NAPOMENA:
+            </p>
+            <p style="margin: 10px 0 0 0; color: #2c6b2f;">
+                Kako je izložba prodajnog karaktera, imate sjajnu priliku da kupovinom odabranih radova, našim mladim autorima pružite podršku u daljem napretku u radu.
+            </p>
+        </div>
+    </div>
+    
+    <div class="content-section">
+        <div class="section-title"><i class="fas fa-images"></i> Galerija</div>
+        
+        <div class="carousel-container" id="carouselContainer">
+            <div class="carousel-slides">
+                <!-- Slajdovi će se kreirati automatski putem JavaScript-a -->
+            </div>
+            
+            <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
+            
+            <div class="carousel-indicators">
+                <!-- Indikatori će se kreirati automatski -->
+            </div>
+        </div>
+        
+        <div class="image-info" id="imageInfo">Slika 1/3</div>
+    </div>
+    
+    <div style="text-align: center; padding: 25px; background: white; border-left: 5px solid #3a6ea5;">
+        <a href="index.html" class="back-button">
+            <i class="fas fa-arrow-left"></i> Povratak na početak
+        </a>
+    </div>
+    
+    <div class="footer">
+        <p>© 2025 Osnovna Škola "Srbija" - Stari Bar</p>
+        <p style="margin-top: 5px; font-size: 0.85rem;"></p>
+    </div>
+
+    <script src="js/carousel.js"></script>
+    <script>
+        // Postavi slike za ovaj QR
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sačekaj da se karusel inicijalizuje
+            setTimeout(() => {
+                // Postavi istu sliku za sva 3 slajda
+                for (let i = 1; i <= 3; i++) {
+                    const slideBg = document.getElementById(`slide${i}`);
+                    if (slideBg) {
+                        slideBg.style.backgroundImage = "url('images/Slika_QR7.jpg')";
+                    }
+                }
+            }, 100);
+        });
+    </script>
+</body>
+</html>

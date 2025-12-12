@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <style>
+    /* OVERRIDE ZA NARANDŽASTU TEMU - QR4 */
+    .header {
+        background: linear-gradient(135deg, #FF9800 0%, #F57C00 100%) !important;
+    }
+    
+    .section-title {
+        color: #F57C00 !important;
+        border-bottom: 3px solid #FF9800 !important;
+    }
+    
+    .section-title i {
+        color: #FF9800 !important;
+    }
+    
+    .student-item {
+        border-left: 4px solid #FF9800 !important;
+        background: #fff3e0 !important;
+    }
+    
+    .student-item:hover {
+        background: #ffe0b2 !important;
+    }
+    
+    .description-text {
+        border-left: 5px solid #FF9800 !important;
+        background: #fffaf0 !important;
+    }
+    
+    .mentor-info {
+        border-left: 4px solid #FF9800 !important;
+        background: #fff3e0 !important;
+    }
+    
+    .back-button {
+        background: linear-gradient(135deg, #FF9800 0%, #F57C00 100%) !important;
+    }
+    
+    .back-button:hover {
+        background: linear-gradient(135deg, #F57C00 0%, #c86400 100%) !important;
+    }
+    
+    .footer {
+        border-top: 3px solid #FF9800 !important;
+    }
+    
+    .carousel-btn {
+        background: rgba(255, 152, 0, 0.85) !important;
+    }
+    
+    .carousel-btn:hover {
+        background: rgba(245, 124, 0, 1) !important;
+    }
+    
+    .carousel-indicator.active {
+        background: #FF9800 !important;
+    }
+    
+    .header h1 {
+        font-size: 2.2rem !important;
+        margin-bottom: 5px !important;
+        line-height: 1.2 !important;
+    }
+    
+    .header .subtitle {
+        font-size: 1.2rem !important;
+        font-weight: 500 !important;
+    }
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novogodišnja zbrka u prvom razredu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Novogodišnja zbrka u prvom razredu</h1>
+        <div class="subtitle">Dramska umjetnost i ples najmlađih</div>
+    </div>
+    
+    <div class="content-section">
+        <div class="section-title"><i class="fas fa-users"></i> Učenici koji učestvuju:</div>
+        <div class="students-container">
+            <div class="student-item">Badžović Adil</div>
+            <div class="student-item">Badžović Ajla</div>
+            <div class="student-item">Čobić Ahmed</div>
+            <div class="student-item">Demirović Ajša</div>
+            <div class="student-item">Đekić Viktor</div>
+            <div class="student-item">Kačar Lejla</div>
+            <div class="student-item">Karanikić Lucia</div>
+            <div class="student-item">Karađuzović Daris</div>
+            <div class="student-item">Kurgaš Haris</div>
+            <div class="student-item">Maljević Andrijana</div>
+            <div class="student-item">Markolović Nikolina</div>
+            <div class="student-item">Nilović Monika</div>
+            <div class="student-item">Ramčević Kan</div>
+            <div class="student-item">Ramović Almir</div>
+            <div class="student-item">Spahić Emsel</div>
+            <div class="student-item">Šabović Kan</div>
+            <div class="student-item">Šabović Una</div>
+            <div class="student-item">Vučević Jakov</div>
+        </div>
+    </div>
+    
+    <div class="content-section">
+        <div class="section-title"><i class="fas fa-info-circle"></i> Opis:</div>
+        <div class="description-text">
+            Učenici prvog razreda izvode veselu mini-predstavu „Novogodišnja zbrka u prvom razredu", koja donosi toplu i humorističnu priču o pripremama za dolazak Nove godine. Kroz kratke dijaloge mali glumci prikazuju kako nastaje prava praznična čarolija kada rade kao tim. Na samom kraju predstave, učenici će izvesti prazničnu koreografiju uz poznatu pjesmu „Jingle Bells", unoseći radost i svečani duh na scenu.
+        </div>
+        
+        <div class="mentor-info">
+            <i class="fas fa-chalkboard-teacher"></i> Osmislile i realizovale: učiteljica Jelena Nikolić i vaspitačica Dragica Pantović
+        </div>
+    </div>
+    
+    <div class="content-section">
+        <div class="section-title"><i class="fas fa-images"></i> Galerija</div>
+        
+        <div class="carousel-container" id="carouselContainer">
+            <div class="carousel-slides">
+                <!-- Slajdovi će se kreirati automatski putem JavaScript-a -->
+            </div>
+            
+            <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
+            
+            <div class="carousel-indicators">
+                <!-- Indikatori će se kreirati automatski -->
+            </div>
+        </div>
+        
+        <div class="image-info" id="imageInfo">Slika 1/3</div>
+    </div>
+    
+    <div style="text-align: center; padding: 25px; background: white; border-left: 5px solid #3a6ea5;">
+        <a href="index.html" class="back-button">
+            <i class="fas fa-arrow-left"></i> Povratak na početak
+        </a>
+    </div>
+    
+    <div class="footer">
+        <p>© 2025 Osnovna Škola "Srbija" - Stari Bar</p>
+        <p style="margin-top: 5px; font-size: 0.85rem;"></p>
+    </div>
+
+    <script src="js/carousel.js"></script>
+    <script>
+        // Postavi slike za ovaj QR
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sačekaj da se karusel inicijalizuje
+            setTimeout(() => {
+                // Postavi istu sliku za sva 3 slajda
+                for (let i = 1; i <= 3; i++) {
+                    const slideBg = document.getElementById(`slide${i}`);
+                    if (slideBg) {
+                        slideBg.style.backgroundImage = "url('images/Slika_QR4.jpg')";
+                    }
+                }
+            }, 100);
+        });
+    </script>
+</body>
+</html>

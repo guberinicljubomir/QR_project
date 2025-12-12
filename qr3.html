@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <style>
+    /* OVERRIDE ZA LJUBIČASTU TEMU - QR3 */
+    .header {
+        background: linear-gradient(135deg, #9C27B0 0%, #7B1FA2 100%) !important;
+    }
+    
+    .section-title {
+        color: #7B1FA2 !important;
+        border-bottom: 3px solid #9C27B0 !important;
+    }
+    
+    .section-title i {
+        color: #9C27B0 !important;
+    }
+    
+    .student-item {
+        border-left: 4px solid #9C27B0 !important;
+        background: #f3e5f5 !important;
+    }
+    
+    .student-item:hover {
+        background: #e1bee7 !important;
+    }
+    
+    .description-text {
+        border-left: 5px solid #9C27B0 !important;
+        background: #f8f0fa !important;
+    }
+    
+    .mentor-info {
+        border-left: 4px solid #9C27B0 !important;
+        background: #f3e5f5 !important;
+    }
+    
+    .back-button {
+        background: linear-gradient(135deg, #9C27B0 0%, #7B1FA2 100%) !important;
+    }
+    
+    .back-button:hover {
+        background: linear-gradient(135deg, #7B1FA2 0%, #5e1780 100%) !important;
+    }
+    
+    .footer {
+        border-top: 3px solid #9C27B0 !important;
+    }
+    
+    .carousel-btn {
+        background: rgba(156, 39, 176, 0.85) !important;
+    }
+    
+    .carousel-btn:hover {
+        background: rgba(123, 31, 162, 1) !important;
+    }
+    
+    .carousel-indicator.active {
+        background: #9C27B0 !important;
+    }
+    
+    .header h1 {
+        font-size: 2.4rem !important;
+        margin-bottom: 5px !important;
+    }
+    
+    .header .subtitle {
+        font-size: 1.2rem !important;
+        font-weight: 500 !important;
+    }
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muzika na ledu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Muzika na ledu</h1>
+        <div class="subtitle">Instrumentalna i vokalna umjetnost</div>
+    </div>
+    
+    <div class="content-section">
+        <div class="section-title"><i class="fas fa-users"></i> Učenici koji učestvuju:</div>
+        <div class="students-container">
+            <div class="student-item">Ćetković Lenka</div>
+            <div class="student-item">Kalamperović Rina</div>
+            <div class="student-item">Vukotić Anđela</div>
+            <div class="student-item">Bracić Enisa</div>
+            <div class="student-item">Đulamerović Esma</div>
+            <div class="student-item">Madžurić Ajla</div>
+            <div class="student-item">Metović Dalila</div>
+            <div class="student-item">Muhorić Nina</div>
+            <div class="student-item">Gojak Melisa</div>
+            <div class="student-item">Drljan Muhamed</div>
+            <div class="student-item">Mekić Belkisa</div>
+            <div class="student-item">Mulja Erdina</div>
+        </div>
+    </div>
+    
+    <div class="content-section">
+        <div class="section-title"><i class="fas fa-info-circle"></i> Opis:</div>
+        <div class="description-text">
+            Da li se osjećate raštimovano, da li vam osjećanja i misli ovih dana nijesu u harmoniji? Danas ste odlučili da promijenite životni ritam i dođete na nešto novo — Muziku na ledu! Za čovjeka starih vremena postojala su dva elementa koja razdvajaju život od smrti: pokret i zvuk. Naša svakodnevnica pokazuje da je od svih umjetnosti baš muzika ta koja je najbliža čovjeku, a da toga nismo ni svjesni.
+        </div>
+        
+        <div class="mentor-info">
+            <i class="fas fa-chalkboard-teacher"></i> Mentor: nastavnica Sara Stanković
+        </div>
+    </div>
+    
+    <div class="content-section">
+        <div class="section-title"><i class="fas fa-images"></i> Galerija</div>
+        
+        <div class="carousel-container" id="carouselContainer">
+            <div class="carousel-slides">
+                <!-- Slajdovi će se kreirati automatski -->
+            </div>
+            
+            <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
+            
+            <div class="carousel-indicators">
+                <!-- Indikatori će se kreirati automatski -->
+            </div>
+        </div>
+        
+        <div class="image-info" id="imageInfo">Slika 1/3</div>
+    </div>
+    
+    <div style="text-align: center; padding: 25px; background: white; border-left: 5px solid #3a6ea5;">
+        <a href="index.html" class="back-button">
+            <i class="fas fa-arrow-left"></i> Povratak na početak
+        </a>
+    </div>
+    
+    <div class="footer">
+        <p>© 2025 Osnovna Škola "Srbija" - Stari Bar</p>
+        <p style="margin-top: 5px; font-size: 0.85rem;"></p>
+    </div>
+
+    <script src="js/carousel.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                for (let i = 1; i <= 3; i++) {
+                    const slideBg = document.getElementById(`slide${i}`);
+                    if (slideBg) {
+                        slideBg.style.backgroundImage = "url('images/Slika_QR3.jpg')";
+                    }
+                }
+            }, 100);
+        });
+    </script>
+</body>
+</html>

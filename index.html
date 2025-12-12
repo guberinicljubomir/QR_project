@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festival Stvaralaštva - Osnovna škola "Srbija" Stari Bar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: #333;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* FESTIVAL HEADER */
+        .festival-header {
+            background: linear-gradient(135deg, #1a5f7a 0%, #0d3b4d 100%);
+            color: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .festival-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(-30px, -30px) rotate(360deg); }
+        }
+
+        .festival-title {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .festival-subtitle {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .festival-date {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 10px 25px;
+            border-radius: 50px;
+            margin-bottom: 25px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+
+        .school-name {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #ffd166;
+            font-weight: 700;
+            position: relative;
+        }
+
+        .festival-motto {
+            font-style: italic;
+            font-size: 1.4rem;
+            margin: 25px 0;
+            color: #a8e6cf;
+            position: relative;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .festival-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
+            position: relative;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            min-width: 200px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .info-card i {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #ffd166;
+        }
+
+        .info-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #a8e6cf;
+        }
+
+        /* ZONE SECTION */
+        .zones-section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: #1a5f7a;
+            margin-bottom: 40px;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #1a5f7a, #4ecdc4);
+            border-radius: 2px;
+        }
+
+        /* ZONE CONTAINER */
+        .zones-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        /* ZONE CARD - RAZLIČITE BOJE */
+        .zone-card {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .zone-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .zone-card:hover .zone-header {
+            transform: scale(1.05);
+        }
+
+        /* ZONE HEADER SA BOJOM */
+        .zone-header {
+            padding: 30px;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.4s ease;
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .zone-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .zone-card:hover .zone-header::before {
+            transform: translateX(100%);
+        }
+
+        .zone-number {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            backdrop-filter: blur(5px);
+        }
+
+        .zone-title {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .zone-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        /* ZONE DETAILS */
+        .zone-details {
+            background: white;
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .zone-time {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .zone-time i {
+            color: #1a5f7a;
+        }
+
+        .zone-description {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            color: #555;
+            flex-grow: 1;
+        }
+
+        .zone-slogan {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            font-style: italic;
+            color: #1a5f7a;
+            margin-bottom: 25px;
+            border-left: 4px solid currentColor;
+        }
+
+        /* ZONE BUTTON */
+        .zone-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 16px 30px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            color: white;
+            margin-top: auto;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .zone-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s;
+        }
+
+        .zone-button:hover::before {
+            left: 100%;
+        }
+
+        .zone-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        /* ZONE BOJE - DEFINISANE */
+        .zone-1 .zone-header { background: linear-gradient(135deg, #2c6b2f 0%, #1b5e20 100%); }
+        .zone-1 .zone-button { background: linear-gradient(135deg, #2c6b2f 0%, #1b5e20 100%); }
+        .zone-1 .zone-slogan { border-left-color: #2c6b2f; }
+
+        .zone-2 .zone-header { background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); }
+        .zone-2 .zone-button { background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); }
+        .zone-2 .zone-slogan { border-left-color: #d32f2f; }
+
+        .zone-3 .zone-header { background: linear-gradient(135deg, #9C27B0 0%, #7B1FA2 100%); }
+        .zone-3 .zone-button { background: linear-gradient(135deg, #9C27B0 0%, #7B1FA2 100%); }
+        .zone-3 .zone-slogan { border-left-color: #9C27B0; }
+
+        .zone-4 .zone-header { background: linear-gradient(135deg, #FF9800 0%, #F57C00 100%); }
+        .zone-4 .zone-button { background: linear-gradient(135deg, #FF9800 0%, #F57C00 100%); }
+        .zone-4 .zone-slogan { border-left-color: #FF9800; }
+
+        .zone-5 .zone-header { background: linear-gradient(135deg, #2196F3 0%, #0D47A1 100%); }
+        .zone-5 .zone-button { background: linear-gradient(135deg, #2196F3 0%, #0D47A1 100%); }
+        .zone-5 .zone-slogan { border-left-color: #2196F3; }
+
+        .zone-6 .zone-header { background: linear-gradient(135deg, #00BCD4 0%, #0097A7 100%); }
+        .zone-6 .zone-button { background: linear-gradient(135deg, #00BCD4 0%, #0097A7 100%); }
+        .zone-6 .zone-slogan { border-left-color: #00BCD4; }
+
+        .zone-7 .zone-header { background: linear-gradient(135deg, #FFC107 0%, #FF8F00 100%); }
+        .zone-7 .zone-button { background: linear-gradient(135deg, #FFC107 0%, #FF8F00 100%); }
+        .zone-7 .zone-slogan { border-left-color: #FFC107; }
+
+        .zone-8 .zone-header { background: linear-gradient(135deg, #795548 0%, #5D4037 100%); }
+        .zone-8 .zone-button { background: linear-gradient(135deg, #795548 0%, #5D4037 100%); }
+        .zone-8 .zone-slogan { border-left-color: #795548; }
+
+        /* COLOR LEGEND */
+        .color-legend {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 40px;
+            padding: 25px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .color-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            border-radius: 8px;
+            background: #f8f9fa;
+        }
+
+        .color-dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        /* SCHOOL LOGO */
+        .school-logo {
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 50px;
+            border-top: 3px solid #1a5f7a;
+        }
+
+        .logo-container {
+            display: inline-block;
+            padding: 30px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-text {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #1a5f7a;
+            margin-bottom: 10px;
+        }
+
+        .logo-subtext {
+            font-size: 1.2rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 992px) {
+            .zones-container {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .festival-header {
+                padding: 30px 20px;
+            }
+            
+            .festival-title {
+                font-size: 2.2rem;
+            }
+            
+            .festival-subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .festival-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .info-card {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .zone-title {
+                font-size: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .festival-title {
+                font-size: 1.8rem;
+            }
+            
+            .zones-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .zone-card {
+                max-width: 100%;
+            }
+            
+            .logo-text {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- FESTIVAL HEADER -->
+    <div class="festival-header">
+        <div class="festival-date">
+            <i class="fas fa-calendar-alt"></i> 16. decembar - Međunarodni dan solidarnosti
+        </div>
+        
+        <div class="school-name">
+            Osnovna škola „Srbija" - Stari Bar
+        </div>
+        
+        <h1 class="festival-title">FESTIVAL STVARALAŠTVA</h1>
+        <div class="festival-subtitle">Zajedno do još ljepše škole!</div>
+        
+        <div class="festival-motto">
+            "Kad dijelimo znanje, umjetnost i osmijehe – gradimo mostove solidarnosti."
+        </div>
+        
+        <div class="festival-info">
+            <div class="info-card">
+                <i class="fas fa-ticket-alt"></i>
+                <h3>Ulaznica</h3>
+                <p>dobrovoljni iznos</p>
+            </div>
+            
+            <div class="info-card">
+                <i class="fas fa-clock"></i>
+                <h3>Vrijeme</h3>
+                <p>16:45 – 19:00</p>
+            </div>
+            
+            <div class="info-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Lokacija</h3>
+                <p>Škola "Srbija"<br>Stari Bar</p>
+            </div>
+            
+            <div class="info-card">
+                <i class="fas fa-info-circle"></i>
+                <h3>Format</h3>
+                <p>8 zona × 3 termina</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ZONE SECTION -->
+    <div class="zones-section">
+        <h2 class="section-title">ZONA PO ZONA</h2>
+        
+        <div class="zones-container">
+            <!-- ZONA 1 -->
+            <div class="zone-card zone-1">
+                <div class="zone-header">
+                    <div class="zone-number">1</div>
+                    <h3 class="zone-title">Spajamo nespojivo-3u1</h3>
+                    <div class="zone-subtitle">Kras u zaleđu Starog Bara kroz nauku</div>
+                </div>
+                
+                <div class="zone-details">
+                    <div class="zone-time">
+                        <i class="fas fa-clock"></i>
+                        <span>17h, 17:30, 18h • Učionica br. 15</span>
+                    </div>
+                    
+                    <div class="zone-description">
+                        Pogledajte čaroliju ujedinjene geografije, fizike i hemije! Učenici će vam objasniti kako se stvaraju kraški oblici reljefa u zaleđu Starog Bara.
+                    </div>
+                    
+                    <div class="zone-slogan">
+                        Pogledajte čaroliju ujedinjene geografije, fizike i hemije!
+                    </div>
+                    
+                    <a href="qr1.html" class="zone-button">
+                        <i class="fas fa-qrcode"></i> Skeniraj QR kod
+                    </a>
+                </div>
+            </div>
+
+            <!-- ZONA 2 -->
+            <div class="zone-card zone-2">
+                <div class="zone-header">
+                    <div class="zone-number">2</div>
+                    <h3 class="zone-title">Medijska pismenost</h3>
+                    <div class="zone-subtitle">Mediji, influenseri i lažne vijesti</div>
+                </div>
+                
+                <div class="zone-details">
+                    <div class="zone-time">
+                        <i class="fas fa-clock"></i>
+                        <span>17h, 17:30, 18h • Učionica br. 3</span>
+                    </div>
+                    
+                    <div class="zone-description">
+                        Naučite kako biti kritički nastrojen prema medijima, prepoznati lažne vijesti i razumjeti uticaj influensera na savremeno društvo.
+                    </div>
+                    
+                    <div class="zone-slogan">
+                        U svijetu informacija – znanje je supermoć!
+                    </div>
+                    
+                    <a href="qr2.html" class="zone-button">
+                        <i class="fas fa-qrcode"></i> Skeniraj QR kod
+                    </a>
+                </div>
+            </div>
+
+            <!-- ZONA 3 -->
+            <div class="zone-card zone-3">
+                <div class="zone-header">
+                    <div class="zone-number">3</div>
+                    <h3 class="zone-title">Muzika na ledu</h3>
+                    <div class="zone-subtitle">Instrumentalna i vokalna umjetnost</div>
+                </div>
+                
+                <div class="zone-details">
+                    <div class="zone-time">
+                        <i class="fas fa-clock"></i>
+                        <span>17h, 17:30, 18h • Učionica br. 1</span>
+                    </div>
+                    
+                    <div class="zone-description">
+                        Doživite magiju muzike kroz vokalno-instrumentalne performanse naših učenika. Melodije koje će vas vratiti u harmoniju.
+                    </div>
+                    
+                    <div class="zone-slogan">
+                        Promjenite životni ritam, vratite se harmoniji!
+                    </div>
+                    
+                    <a href="qr3.html" class="zone-button">
+                        <i class="fas fa-qrcode"></i> Skeniraj QR kod
+                    </a>
+                </div>
+            </div>
+
+            <!-- ZONA 4 -->
+            <div class="zone-card zone-4">
+                <div class="zone-header">
+                    <div class="zone-number">4</div>
+                    <h3 class="zone-title">Novogodišnja zbrka u prvom razredu</h3>
+                    <div class="zone-subtitle">Dramska umjetnost i ples najmlađih</div>
+                </div>
+                
+                <div class="zone-details">
+                    <div class="zone-time">
+                        <i class="fas fa-clock"></i>
+                        <span>17h • Učionica br. 14</span>
+                    </div>
+                    
+                    <div class="zone-description">
+                        Naši najmlađi učenici u veseloj predstavi o pripremama za Novu godinu. Kraj predstave - praznička koreografija uz "Jingle Bells".
+                    </div>
+                    
+                    <div class="zone-slogan">
+                        Najljepše poruke ponekad se glume i plešu!
+                    </div>
+                    
+                    <a href="qr4.html" class="zone-button">
+                        <i class="fas fa-qrcode"></i> Skeniraj QR kod
+                    </a>
+                </div>
+            </div>
+
+            <!-- ZONA 5 -->
+            <div class="zone-card zone-5">
+                <div class="zone-header">
+                    <div class="zone-number">5</div>
+                    <h3 class="zone-title">Turnir - mini rukomet</h3>
+                    <div class="zone-subtitle">Gost: Indira Mujić, RK Mornar</div>
+                </div>
+                
+                <div class="zone-details">
+                    <div class="zone-time">
+                        <i class="fas fa-clock"></i>
+                        <span>17:30, 18h, 18:30 • Fiskulturna sala</span>
+                    </div>
+                    
+                    <div class="zone-description">
+                        Uzbudljiva takmičenja mladih rukometaša sa specijalnim gostom - Indirom Mujić iz RK Mornar. Dođite da navijate!
+                    </div>
+                    
+                    <div class="zone-slogan">
+                        Pokreni se – dobrota je igra koja uvijek pobjeđuje!
+                    </div>
+                    
+                    <a href="qr5.html" class="zone-button">
+                        <i class="fas fa-qrcode"></i> Skeniraj QR kod
+                    </a>
+                </div>
+            </div>
+
+            <!-- ZONA 6 -->
+            <div class="zone-card zone-6">
+                <div class="zone-header">
+                    <div class="zone-number">6</div>
+                    <h3 class="zone-title">A forest adventure</h3>
+                    <div class="zone-subtitle">Dramska umjetnost na engleskom</div>
+                </div>
+                
+                <div class="zone-details">
+                    <div class="zone-time">
+                        <i class="fas fa-clock"></i>
+                        <span>17h, 17:30, 18h • Učionica br. 4</span>
+                    </div>
+                    
+                    <div class="zone-description">
+                        Priča o životinjama koje zajedno traže nestalo zvono. Predstava na engleskom jeziku koja uči o prijateljstvu i saradnji.
+                    </div>
+                    
+                    <div class="zone-slogan">
+                        Act with heart - share the light!
+                    </div>
+                    
+                    <a href="qr6.html" class="zone-button">
+                        <i class="fas fa-qrcode"></i> Skeniraj QR kod
+                    </a>
+                </div>
+            </div>
+
+            <!-- ZONA 7 -->
+            <div class="zone-card zone-7">
+                <div class="zone-header">
+                    <div class="zone-number">7</div>
+                    <h3 class="zone-title">Likovni kutak</h3>
+                    <div class="zone-subtitle">Crteži i slike</div>
+                </div>
+                
+                <div class="zone-details">
+                    <div class="zone-time">
+                        <i class="fas fa-clock"></i>
+                        <span>17h-19h • Hol</span>
+                    </div>
+                    
+                    <div class="zone-description">
+                        Izložba radova naših mladih umjetnika. Radovi su na prodaju, a sredstva idu za podršku daljem razvoju talenata.
+                    </div>
+                    
+                    <div class="zone-slogan">
+                        Crtamo osmijehe, bojimo svijet!
+                    </div>
+                    
+                    <a href="qr7.html" class="zone-button">
+                        <i class="fas fa-qrcode"></i> Skeniraj QR kod
+                    </a>
+                </div>
+            </div>
+
+            <!-- ZONA 8 -->
+            <div class="zone-card zone-8">
+                <div class="zone-header">
+                    <div class="zone-number">8</div>
+                    <h3 class="zone-title">Zimska radionica</h3>
+                    <div class="zone-subtitle">Roditelji u gostima</div>
+                </div>
+                
+                <div class="zone-details">
+                    <div class="zone-time">
+                        <i class="fas fa-clock"></i>
+                        <span>17h • PO Zaljevo</span>
+                    </div>
+                    
+                    <div class="zone-description">
+                        Radionice za izradu novogodišnjih ukrasa za roditelje i posjetioce. Kreativni rad sa najmlađim učenicima u toploj atmosferi.
+                    </div>
+                    
+                    <div class="zone-slogan">
+                        Ukras više, ruka više - dobrote najviše!
+                    </div>
+                    
+                    <a href="qr8.html" class="zone-button">
+                        <i class="fas fa-qrcode"></i> Skeniraj QR kod
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- LEGENDA BOJA -->
+        <div class="color-legend">
+            <div class="color-item">
+                <div class="color-dot" style="background: #2c6b2f;"></div>
+                <span>Zona 1: Spajamo nespojivo</span>
+            </div>
+            <div class="color-item">
+                <div class="color-dot" style="background: #d32f2f;"></div>
+                <span>Zona 2: Medijska pismenost</span>
+            </div>
+            <div class="color-item">
+                <div class="color-dot" style="background: #9C27B0;"></div>
+                <span>Zona 3: Muzika na ledu</span>
+            </div>
+            <div class="color-item">
+                <div class="color-dot" style="background: #FF9800;"></div>
+                <span>Zona 4: Novogodišnja zbrka</span>
+            </div>
+            <div class="color-item">
+                <div class="color-dot" style="background: #2196F3;"></div>
+                <span>Zona 5: Turnir rukomet</span>
+            </div>
+            <div class="color-item">
+                <div class="color-dot" style="background: #00BCD4;"></div>
+                <span>Zona 6: Forest adventure</span>
+            </div>
+            <div class="color-item">
+                <div class="color-dot" style="background: #FFC107;"></div>
+                <span>Zona 7: Likovni kutak</span>
+            </div>
+            <div class="color-item">
+                <div class="color-dot" style="background: #795548;"></div>
+                <span>Zona 8: Zimska radionica</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ŠKOLSKI LOGO -->
+    <div class="school-logo">
+        <div class="logo-container">
+            <div class="logo-text">OS "Srbija"</div>
+            <div class="logo-subtext">Stari Bar</div>
+            <div style="margin-top: 15px; color: #888; font-size: 0.9rem;">
+                Festival stvaralaštva • 16. decembar 2024.
+            </div>
+            <div style="margin-top: 20px; padding: 15px; background: #f8f9fa; border-radius: 10px; font-size: 0.9rem; color: #666;">
+                <i class="fas fa-info-circle"></i> Festival se održava u osam tematskih zona,<br>
+                koje se ponavljaju u terminima 17h / 17:30 / 18h<br>
+                Otvaranje i završetak u holu.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

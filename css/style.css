@@ -1,0 +1,351 @@
+/* style.css - ZAJEDNIČKI CSS ZA SVE STRANICE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', 'Helvetica', sans-serif;
+}
+
+body {
+    background-color: #f5f9ff;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+/* HEADER - SVI ISTI */
+.header {
+    background: linear-gradient(135deg, #3a6ea5 0%, #2a4d7a 100%);
+    color: white;
+    padding: 35px 25px;
+    border-radius: 15px 15px 0 0;
+    text-align: center;
+    margin-bottom: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.header .subtitle {
+    font-size: 1.3rem;
+    opacity: 0.95;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+/* SEKCIJE - SVE ISTE */
+.content-section {
+    background: white;
+    padding: 30px;
+    margin-bottom: 5px;
+    border-left: 5px solid #3a6ea5;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.section-title {
+    color: #2a4d7a;
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid #3a6ea5;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-title i {
+    color: #3a6ea5;
+}
+
+/* UČENICI - ISTO ZA SVE */
+.students-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.student-item {
+    background: #f0f7ff;
+    padding: 14px 18px;
+    border-radius: 10px;
+    border-left: 4px solid #3a6ea5;
+    font-size: 1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.student-item:hover {
+    transform: translateY(-3px);
+    background: #e1efff;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* OPIS - ISTO ZA SVE */
+.description-text {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    text-align: justify;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: #f9fbfe;
+    border-radius: 10px;
+    border-left: 4px solid #3a6ea5;
+}
+
+.mentor-info {
+    background: #e8f2ff;
+    padding: 18px;
+    border-radius: 10px;
+    margin-top: 25px;
+    border-left: 4px solid #3a6ea5;
+    font-style: italic;
+    font-weight: 500;
+}
+
+/* KARUSEL - ISTI ZA SVE STRANICE */
+.carousel-container {
+    width: 100%;
+    height: 450px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    background: #f8fafd;
+    border: 1px solid #e1e8f0;
+}
+
+.carousel-slides {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* BACKGROUND IMAGE - CIJELA SLIKA SE VIDI */
+.carousel-slide .slide-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #f0f5ff;
+}
+
+.slide-fallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #e8f2ff, #d4e4ff);
+    color: #2a4d7a;
+    font-size: 1.3rem;
+    text-align: center;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.slide-fallback i {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: #3a6ea5;
+    opacity: 0.7;
+}
+
+/* DUGMAD ZA NAVIGACIJU */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(58, 110, 165, 0.85);
+    color: white;
+    border: none;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    font-size: 1.8rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    z-index: 20;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-btn:hover {
+    background: rgba(42, 77, 122, 1);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn.prev {
+    left: 20px;
+}
+
+.carousel-btn.next {
+    right: 20px;
+}
+
+/* INDIKATORI */
+.carousel-indicators {
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    z-index: 20;
+}
+
+.carousel-indicator {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    border: 2px solid white;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-indicator.active {
+    background: #3a6ea5;
+    transform: scale(1.2);
+}
+
+/* SLIKE INFO - samo brojevi */
+.image-info {
+    text-align: center;
+    margin-top: 20px;
+    color: #555;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* DUGME NAZAD */
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #3a6ea5 0%, #2a4d7a 100%);
+    color: white;
+    padding: 14px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 25px;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: 0 4px 10px rgba(58, 110, 165, 0.3);
+}
+
+.back-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(58, 110, 165, 0.4);
+    background: linear-gradient(135deg, #2a4d7a 0%, #1a3d6a 100%);
+}
+
+/* FOOTER - SVI ISTI */
+.footer {
+    text-align: center;
+    padding: 25px;
+    color: #666;
+    font-size: 0.95rem;
+    background: white;
+    border-radius: 0 0 15px 15px;
+    border-top: 2px solid #3a6ea5;
+    margin-top: -1px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    
+    .header {
+        padding: 25px 20px;
+    }
+    
+    .header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .header .subtitle {
+        font-size: 1.15rem;
+    }
+    
+    .content-section {
+        padding: 25px;
+    }
+    
+    .carousel-container {
+        height: 350px;
+    }
+    
+    .carousel-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.5rem;
+    }
+    
+    .students-container {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-container {
+        height: 300px;
+    }
+    
+    .students-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .header h1 {
+        font-size: 1.9rem;
+    }
+    
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.3rem;
+    }
+    
+    .carousel-btn.prev {
+        left: 10px;
+    }
+    
+    .carousel-btn.next {
+        right: 10px;
+    }
+}

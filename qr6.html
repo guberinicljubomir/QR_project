@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <style>
+    /* OVERRIDE ZA TIRKIZNU TEMU - QR6 */
+    .header {
+        background: linear-gradient(135deg, #00BCD4 0%, #0097A7 100%) !important;
+    }
+    
+    .section-title {
+        color: #0097A7 !important;
+        border-bottom: 3px solid #00BCD4 !important;
+    }
+    
+    .section-title i {
+        color: #00BCD4 !important;
+    }
+    
+    .student-item {
+        border-left: 4px solid #00BCD4 !important;
+        background: #e0f7fa !important;
+    }
+    
+    .student-item:hover {
+        background: #b2ebf2 !important;
+    }
+    
+    .description-text {
+        border-left: 5px solid #00BCD4 !important;
+        background: #f0fdff !important;
+    }
+    
+    .mentor-info {
+        border-left: 4px solid #00BCD4 !important;
+        background: #e0f7fa !important;
+    }
+    
+    .back-button {
+        background: linear-gradient(135deg, #00BCD4 0%, #0097A7 100%) !important;
+    }
+    
+    .back-button:hover {
+        background: linear-gradient(135deg, #0097A7 0%, #006974 100%) !important;
+    }
+    
+    .footer {
+        border-top: 3px solid #00BCD4 !important;
+    }
+    
+    .carousel-btn {
+        background: rgba(0, 188, 212, 0.85) !important;
+    }
+    
+    .carousel-btn:hover {
+        background: rgba(0, 151, 167, 1) !important;
+    }
+    
+    .carousel-indicator.active {
+        background: #00BCD4 !important;
+    }
+    
+    .header h1 {
+        font-size: 2.4rem !important;
+        margin-bottom: 5px !important;
+    }
+    
+    .header .subtitle {
+        font-size: 1.2rem !important;
+        font-weight: 500 !important;
+    }
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A forest adventure</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>A forest adventure</h1>
+        <div class="subtitle">Dramska umjetnost na engleskom jeziku</div>
+    </div>
+    
+    <div class="content-section">
+        <div class="section-title"><i class="fas fa-users"></i> Učenici koji učestvuju:</div>
+        <div class="students-container">
+            <div class="student-item">Zagora Rejan</div>
+            <div class="student-item">Ibrišimović Daris</div>
+            <div class="student-item">Durović Asija</div>
+            <div class="student-item">Duraković Nail</div>
+            <div class="student-item">Seidović Meldin</div>
+            <div class="student-item">Čindrak Asija</div>
+            <div class="student-item">Demirović Darijan</div>
+            <div class="student-item">Metović Enisa</div>
+            <div class="student-item">Mirović Aleksa</div>
+            <div class="student-item">Muratović Kenan</div>
+            <div class="student-item">Opančina Andrija</div>
+            <div class="student-item">Seidović Kerim</div>
+        </div>
+    </div>
+    
+    <div class="content-section">
+        <div class="section-title"><i class="fas fa-info-circle"></i> Opis:</div>
+        <div class="description-text">
+            U čarobnoj šumi nastaje zbrka kada životinje otkriju da je njihovo omiljeno zvono nestalo! U zajedničkoj potrazi uče koliko su važni prijateljstvo i sloga. Pridružite nam se u ovoj veseloj avanturi punoj smijeha, pjesama i važnih lekcija o timskom radu i saradnji.
+        </div>
+        
+        <div style="background: #f0f7ff; padding: 20px; border-radius: 10px; margin-top: 20px; border-left: 4px solid #3a6ea5;">
+            <p style="margin: 0; font-weight: 600; color: #2a4d7a;">
+                <i class="fas fa-language"></i> ENGLISH VERSION:
+            </p>
+            <p style="margin: 10px 0 0 0; color: #555; font-style: italic;">
+                In a magical forest, chaos ensues when the animals discover their favorite bell has disappeared! In their joint search, they learn how important friendship and harmony are. Join us in this fun adventure filled with laughter, songs, and important lessons about teamwork and cooperation.
+            </p>
+        </div>
+    </div>
+    
+    <div class="content-section">
+        <div class="section-title"><i class="fas fa-images"></i> Galerija</div>
+        
+        <div class="carousel-container" id="carouselContainer">
+            <div class="carousel-slides">
+                <!-- Slajdovi će se kreirati automatski putem JavaScript-a -->
+            </div>
+            
+            <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
+            
+            <div class="carousel-indicators">
+                <!-- Indikatori će se kreirati automatski -->
+            </div>
+        </div>
+        
+        <div class="image-info" id="imageInfo">Slika 1/3</div>
+    </div>
+    
+    <div style="text-align: center; padding: 25px; background: white; border-left: 5px solid #3a6ea5;">
+        <a href="index.html" class="back-button">
+            <i class="fas fa-arrow-left"></i> Povratak na početak
+        </a>
+    </div>
+    
+    <div class="footer">
+        <p>© 2025 Osnovna Škola "Srbija" - Stari Bar</p>
+        <p style="margin-top: 5px; font-size: 0.85rem;"></p>
+    </div>
+
+    <script src="js/carousel.js"></script>
+    <script>
+        // Postavi slike za ovaj QR
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sačekaj da se karusel inicijalizuje
+            setTimeout(() => {
+                // Postavi istu sliku za sva 3 slajda
+                for (let i = 1; i <= 3; i++) {
+                    const slideBg = document.getElementById(`slide${i}`);
+                    if (slideBg) {
+                        slideBg.style.backgroundImage = "url('images/Slika_QR6.jpg')";
+                    }
+                }
+            }, 100);
+        });
+    </script>
+</body>
+</html>

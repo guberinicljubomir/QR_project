@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <style>
+    /* OVERRIDE ZA CRVENU TEMU - QR2 */
+    .header {
+        background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%) !important;
+    }
+    
+    .section-title {
+        color: #b71c1c !important;
+        border-bottom: 3px solid #d32f2f !important;
+    }
+    
+    .section-title i {
+        color: #d32f2f !important;
+    }
+    
+    .student-item {
+        border-left: 4px solid #d32f2f !important;
+        background: #ffebee !important;
+    }
+    
+    .student-item:hover {
+        background: #ffcdd2 !important;
+    }
+    
+    .description-text {
+        border-left: 5px solid #d32f2f !important;
+        background: #fff3f3 !important;
+    }
+    
+    .mentor-info {
+        border-left: 4px solid #d32f2f !important;
+        background: #ffebee !important;
+    }
+    
+    .back-button {
+        background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%) !important;
+    }
+    
+    .back-button:hover {
+        background: linear-gradient(135deg, #b71c1c 0%, #8b0000 100%) !important;
+    }
+    
+    .footer {
+        border-top: 3px solid #d32f2f !important;
+    }
+    
+    .carousel-btn {
+        background: rgba(211, 47, 47, 0.85) !important;
+    }
+    
+    .carousel-btn:hover {
+        background: rgba(183, 28, 28, 1) !important;
+    }
+    
+    .carousel-indicator.active {
+        background: #d32f2f !important;
+    }
+    
+    .header h1 {
+        font-size: 2.4rem !important;
+        margin-bottom: 5px !important;
+    }
+    
+    .header .subtitle {
+        font-size: 1.2rem !important;
+        font-weight: 500 !important;
+    }
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medijska pismenost</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Medijska pismenost</h1>
+        <div class="subtitle">Mediji, influenseri i lažne vijesti</div>
+    </div>
+    
+    <div class="content-section">
+        <div class="section-title"><i class="fas fa-users"></i> Učenici koji učestvuju:</div>
+        <div class="students-container">
+            <div class="student-item">Alisa Adrović</div>
+            <div class="student-item">Uma Vukić</div>
+            <div class="student-item">Suela Lukić</div>
+            <div class="student-item">Nikolina Perkolić</div>
+            <div class="student-item">Ajka Dreković</div>
+            <div class="student-item">Armin Mujić</div>
+            <div class="student-item">Dženan Bracić</div>
+        </div>
+    </div>
+    
+    <div class="content-section">
+        <div class="section-title"><i class="fas fa-info-circle"></i> Opis:</div>
+        <div class="description-text">
+            Učenici će ukazati na razloge zašto je važno biti medijski pismen; objasniće na koji način mediji koriste emocije na konkretnim primjerima; o aktuelnim medijskim sadržajima i ko su influenseri; pet pitanja koja mogu promijeniti svijet (pomoć pri razotkrivanju lažne vijesti); tehnike ubjeđivanja; štampani i elektronski mediji; tipovi medijskih manipulacija.
+        </div>
+        
+        <div class="mentor-info">
+            <i class="fas fa-chalkboard-teacher"></i> Mentor: nastavnica Sara Šćepanović
+        </div>
+    </div>
+    
+    <div class="content-section">
+        <div class="section-title"><i class="fas fa-images"></i> Galerija</div>
+        
+        <div class="carousel-container" id="carouselContainer">
+            <div class="carousel-slides">
+                <!-- Slajdovi će se kreirati automatski -->
+            </div>
+            
+            <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
+            
+            <div class="carousel-indicators">
+                <!-- Indikatori će se kreirati automatski -->
+            </div>
+        </div>
+        
+        <div class="image-info" id="imageInfo">Slika 1/3</div>
+    </div>
+    
+    <div style="text-align: center; padding: 25px; background: white; border-left: 5px solid #3a6ea5;">
+        <a href="index.html" class="back-button">
+            <i class="fas fa-arrow-left"></i> Povratak na početak
+        </a>
+    </div>
+    
+    <div class="footer">
+        <p>© 2025 Osnovna Škola "Srbija" - Stari Bar</p>
+        <p style="margin-top: 5px; font-size: 0.85rem;"></p>
+    </div>
+
+    <script src="js/carousel.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                for (let i = 1; i <= 3; i++) {
+                    const slideBg = document.getElementById(`slide${i}`);
+                    if (slideBg) {
+                        slideBg.style.backgroundImage = "url('images/Slika_QR2.jpg')";
+                    }
+                }
+            }, 100);
+        });
+    </script>
+</body>
+</html>
